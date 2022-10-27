@@ -35,14 +35,15 @@ public class DaoTest {
     public void tearDown() {
     }
 
-//    @Test
-//    public void testInserirUsuario() {
-//        Dao<Usuario> dao = new Dao(Usuario.class);
-//        Usuario u = new Usuario("Astolfo", "Rua das Antas, 1 - Bandeirantes-PR", "(43) 9988-7755", 
-//                new GregorianCalendar(2004, Calendar.FEBRUARY, 11).getTime(), 
-//                "astolfo", "123"); 
-//        dao.inserir(u);     
-//    }
+    @Test
+    public void testInserirUsuario() {
+        Dao<Usuario> dao = new Dao(Usuario.class);
+        Usuario u = new Usuario("Astolfo", "Rua das Antas, 1 - Bandeirantes-PR", 
+                "(43) 9988-7755", 
+                new GregorianCalendar(2004, Calendar.FEBRUARY, 11).getTime(), 
+                "astolfo", "123"); 
+        dao.inserir(u);     
+    }
     
     
     @Test
