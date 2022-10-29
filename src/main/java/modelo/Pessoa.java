@@ -52,7 +52,7 @@ public class Pessoa implements Serializable {
     }
     
     
-    //<editor-fold defaultstate="collapsed" desc="Getters ands Setters">
+    //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
     public Integer getCodigo() {
         return codigo;
     }

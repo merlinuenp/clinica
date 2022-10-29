@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaQuery;
+import util.ExcecaoIdNaoEncontrado;
 import util.JpaUtil;
 
 public class Dao<T> implements Serializable {
@@ -26,10 +27,14 @@ public class Dao<T> implements Serializable {
         return objeto;
     }
 
-    public T buscarPorId(Object id) {
+    public T buscarPorId(Integer id) throws ExcecaoIdNaoEncontrado {
         T objeto;
         manager = JpaUtil.getEntityManager();
         objeto = manager.find(classe, id);
+        if (objeto == null){
+            manager.close();
+            throw new ExcecaoIdNaoEncontrado(id);             
+        }
         manager.close();
         return objeto;
     }

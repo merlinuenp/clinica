@@ -27,8 +27,6 @@ public class Usuario extends Pessoa implements Serializable {
         this.senha = senha; 
     }
     
-    
-
     public String getLogin() {
         return login;
     }
