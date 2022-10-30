@@ -1,6 +1,7 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
@@ -19,13 +20,18 @@ public class Tutor extends Pessoa implements Serializable {
     @Column(length = 20)
     private String cpf; 
     
-    @OneToMany (mappedBy = "tutor",
-            fetch = FetchType.EAGER,
+    @OneToMany (mappedBy = "tutor", fetch = FetchType.EAGER,
             cascade = CascadeType.MERGE)
     private List<Animal> animais; 
 
-    public Tutor() {
+    public Tutor() { }
+
+    public Tutor(String cpf, String nome, String endereco, String telefone, Date dataNascimento) {
+        super(nome, endereco, telefone, dataNascimento);
+        this.cpf = cpf;
     }
+    
+    
 
     public String getCpf() {
         return cpf;
@@ -33,6 +39,14 @@ public class Tutor extends Pessoa implements Serializable {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public List<Animal> getAnimais() {
+        return animais;
+    }
+
+    public void setAnimais(List<Animal> animais) {
+        this.animais = animais;
     }
 
     @Override
