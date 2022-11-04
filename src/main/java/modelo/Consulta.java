@@ -1,22 +1,26 @@
 package modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- *
- * @author User
+ * @author José
  */
-public class Consulta {
+@Entity
+@Table(name = "consulta")
+public class Consulta implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,13 +38,21 @@ public class Consulta {
     @Column(columnDefinition = "TEXT")
     private String detalhes; 
     
-    @Column
+    @Column(columnDefinition="Decimal(10,2) default '0.00'")
     private Double valor;
     
     @Column
     private Boolean pago; 
 
     public Consulta() {
+    }
+
+    public Consulta(Animal animal, Date dataConsulta, String detalhes, Double valor, Boolean pago) {
+        this.animal = animal;
+        this.dataConsulta = dataConsulta;
+        this.detalhes = detalhes;
+        this.valor = valor;
+        this.pago = pago;
     }
     
     
