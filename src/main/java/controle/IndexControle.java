@@ -33,6 +33,10 @@ public class IndexControle implements Serializable {
         }
         return "menu";
     }
+    
+    public void converter(){
+        usuario.setLogin(usuario.getLogin().toLowerCase());
+    }
 
     public Usuario getUsuario() {
         return usuario;
