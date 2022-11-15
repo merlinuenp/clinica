@@ -1,14 +1,13 @@
 package dao;
 
-import modelo.Animal;
-import modelo.Consulta;
-import modelo.Tutor;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import modelo.Usuario;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import util.ExcecaoIdNaoEncontrado;
 
 /**
  *
@@ -83,8 +82,8 @@ public class DaoTest {
 //    public void testInserirTutor() {
 //        Dao<Tutor> dao = new Dao(Tutor.class);
 //         // String cpf, String nome, String endereco, String telefone, Date dataNascimento
-//        Tutor t = new Tutor("319.291.560-90", "Rigby", "Rua das Couves, 100 - Bandeirantes-PR", 
-//                "(43) 9988-7755", 
+//        Tutor t = new Tutor("313.548.693-15", "Rigby", "Rua das Couves, 100 - Bandeirantes-PR", 
+//                "(43) 9688-7755", 
 //                new GregorianCalendar(2000, Calendar.FEBRUARY, 1).getTime()); 
 //        dao.inserir(t);     
 //    }
